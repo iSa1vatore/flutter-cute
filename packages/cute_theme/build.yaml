@@ -1,0 +1,7 @@
+builders:
+  cute_theme:
+    import: "package:cute_theme/builder.dart"
+    builder_factories: ["cuteThemeBuilder"]
+    build_extensions: { ".dart": [".cute.dart'"] }
+    auto_apply: dependents
+    build_to: source

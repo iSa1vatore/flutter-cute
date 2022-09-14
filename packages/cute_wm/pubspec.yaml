@@ -1,0 +1,21 @@
+name: cute_wm
+description: MVVM implementation for Flutter
+version: 0.0.1
+repository: "https://github.com/isa1vatore/flutter-cute/tree/main/packages/cute_wm"
+homepage: "https://github.com/isa1vatore/flutter-cute/tree/main/packages/cute_wm"
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+
