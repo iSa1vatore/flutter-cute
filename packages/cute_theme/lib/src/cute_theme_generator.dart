@@ -42,7 +42,6 @@ class CuteThemeGenerator extends GeneratorForAnnotation<CuteTheme> {
       generatorBuffer.write(ThemeClassTemplate(
         className: className + constructorName.capitalize,
         constructorParameters: constructorParams ?? [],
-        fields: [],
       ));
     }
 
@@ -56,7 +55,7 @@ class CuteThemeGenerator extends GeneratorForAnnotation<CuteTheme> {
             type: "$className${constructorName.capitalize}",
           )
       ],
-      fields: [],
+      genOfMethod: true,
     ));
 
     for (var optionDetails in options) {
@@ -109,9 +108,4 @@ class ModelVisitor extends SimpleElementVisitor {
       ));
     }
   }
-
-  // @override
-  // void visitFieldElement(FieldElement element) {
-  //   fields.add(element);
-  // }
 }

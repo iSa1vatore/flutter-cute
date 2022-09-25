@@ -3,10 +3,9 @@ import 'package:coffee_3in1/assets/style/app_style.dart';
 import 'package:coffee_3in1/features/app/app_wm.dart';
 import 'package:cute_wm/cute_wm.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class SettingsWM extends WidgetModel with AppStyleWidgetModelMixin {
-  SettingsWM.factory(BuildContext context) : _appWM = context.read();
+  SettingsWM.factory(BuildContext context) : _appWM = AppWM.of(context);
 
   final AppWM _appWM;
 

@@ -311,6 +311,10 @@ class AppStyle extends ThemeExtension<AppStyle> {
       message: message.lerp(other.message, t),
     );
   }
+
+  static AppStyle of(BuildContext context) {
+    return Theme.of(context).extension()!;
+  }
 }
 
 class AppStyleBuilder extends StatelessWidget {

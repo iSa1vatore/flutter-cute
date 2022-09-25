@@ -6,12 +6,14 @@ class ThemeClassTemplate {
   ThemeClassTemplate({
     required this.className,
     required this.constructorParameters,
-    required this.fields,
+    this.fields = const [],
+    this.genOfMethod = false,
   });
 
   final List<ConstructorParam> constructorParameters;
   final List<FieldElement> fields;
   final String className;
+  final bool genOfMethod;
 
   String _constructorAndFields() {
     final constructorBuffer = StringBuffer();
@@ -90,6 +92,16 @@ class ThemeClassTemplate {
     ''';
   }
 
+  String _ofMethod() {
+    if (!genOfMethod) return '';
+
+    return '''
+    static $className of(BuildContext context) {
+      return Theme.of(context).extension()!;
+    }
+    ''';
+  }
+
   @override
   String toString() {
     return '''
@@ -97,6 +109,7 @@ class ThemeClassTemplate {
       ${_constructorAndFields()}
       ${_copyWithMethod()}
       ${_lerpMethod()}
+      ${_ofMethod()}
     }
     ''';
   }

@@ -8,20 +8,17 @@ version: 1.0.0+1
 environment:
   sdk: '>=2.18.0 <3.0.0'
 
-
 dependencies:
   flutter:
     sdk: flutter
 
-  cute_di_scope:
-    path: ../../packages/cute_di_scope
-  provider:
-
   cute_wm:
     path: ../../packages/cute_wm
 
-  cute_theme_annotation:
-    path: ../../packages/cute_theme_annotation
+  cute_di_scope: ^0.0.1
+  cute_theme_annotation: ^0.0.2
+
+  provider:
 
   cupertino_icons: ^1.0.2
 
@@ -29,8 +26,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  cute_theme:
-    path: ../../packages/cute_theme
+  cute_theme: ^0.0.2
 
   flutter_lints: ^2.0.0
   build_runner:

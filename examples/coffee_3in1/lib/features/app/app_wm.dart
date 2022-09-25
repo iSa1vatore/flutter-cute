@@ -1,6 +1,8 @@
 import 'package:cute_wm/cute_wm.dart';
 import 'package:flutter/material.dart';
 
+import 'app.dart';
+
 class AppWM extends WidgetModel {
   AppWM.factory(_);
 
@@ -19,4 +21,6 @@ class AppWM extends WidgetModel {
     themeMode = themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
     setState();
   }
+
+  static AppWM of(BuildContext context) => AppScope.of(context).appWM;
 }

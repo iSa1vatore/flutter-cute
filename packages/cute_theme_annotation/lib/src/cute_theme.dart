@@ -43,7 +43,7 @@ enum CuteThemeOptions {
 }
 
 class CuteTheme {
-  const CuteTheme({this.options});
+  const CuteTheme({this.options = const []});
 
-  final List<CuteThemeOptions>? options;
+  final List<CuteThemeOptions> options;
 }

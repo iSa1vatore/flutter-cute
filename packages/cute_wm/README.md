@@ -5,7 +5,7 @@ In your flutter project add the dependency:
 ```yml
 dependencies:
   ...
-  flutter_cute: 
+  cute_wm: 
 ```
 
 ## Usage example

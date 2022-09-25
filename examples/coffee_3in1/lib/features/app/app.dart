@@ -1,9 +1,28 @@
 import 'package:coffee_3in1/assets/style/styles/app_styles.dart';
 import 'package:coffee_3in1/features/app/app_wm.dart';
 import 'package:coffee_3in1/features/settings/screens/settings_screen/settings_screen.dart';
-import 'package:cute_di_scope/cute_di_scope.dart';
 import 'package:cute_wm/cute_wm.dart';
 import 'package:flutter/material.dart';
+
+class AppScope extends InheritedWidget {
+  const AppScope({
+    Key? key,
+    required this.appWM,
+    required Widget child,
+  }) : super(key: key, child: child);
+
+  final AppWM appWM;
+
+  static AppScope of(BuildContext context) {
+    final AppScope? result =
+        context.dependOnInheritedWidgetOfExactType<AppScope>();
+    assert(result != null, 'No AppScope found in context');
+    return result!;
+  }
+
+  @override
+  bool updateShouldNotify(AppScope oldWidget) => this != oldWidget;
+}
 
 class App extends CuteWidget<AppWM> {
   const App({
@@ -42,8 +61,8 @@ class App extends CuteWidget<AppWM> {
           )
           .toMaterialTheme(),
       themeMode: wm.themeMode,
-      home: CuteDiScope<AppWM>(
-        factory: (_) => wm,
+      home: AppScope(
+        appWM: wm,
         child: const SettingsScreen(),
       ),
     );
