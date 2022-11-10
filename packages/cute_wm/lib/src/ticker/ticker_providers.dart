@@ -13,8 +13,8 @@ import 'package:flutter/widgets.dart';
 /// This mixin only supports vending a single ticker. If you might have multiple
 /// [AnimationController] objects over the lifetime of the [State], use a full
 /// [TickerProviderWidgetModelMixin] instead.
-mixin SingleTickerProviderWidgetModelMixin on WidgetModel
-    implements TickerProvider {
+mixin SingleTickerProviderWidgetModelMixin<W extends CuteWidget>
+    on WidgetModel<W> implements TickerProvider {
   Ticker? _ticker;
 
   @override
@@ -82,7 +82,8 @@ mixin SingleTickerProviderWidgetModelMixin on WidgetModel
 /// [AnimationController]) for the lifetime of your [WidgetModel], then using a
 /// [SingleTickerProviderWidgetModelMixin] is more efficient.
 /// This is the common case.
-mixin TickerProviderWidgetModelMixin on WidgetModel implements TickerProvider {
+mixin TickerProviderWidgetModelMixin<W extends CuteWidget> on WidgetModel<W>
+    implements TickerProvider {
   final _tickers = <Ticker>{};
 
   @override
