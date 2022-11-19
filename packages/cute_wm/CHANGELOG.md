@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Support automatic keep alive;
+
 ## 0.0.3
 
 * Fix ticker providers mixin type;

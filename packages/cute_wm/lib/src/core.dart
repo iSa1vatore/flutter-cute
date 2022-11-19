@@ -96,6 +96,7 @@ abstract class WidgetModel<W extends CuteWidget> with Diagnosticable {
 
   // Called after the widget model has been created.
   @protected
+  @mustCallSuper
   void init() {}
 
   /// Called whenever the widget configuration changes.
@@ -115,18 +116,21 @@ abstract class WidgetModel<W extends CuteWidget> with Diagnosticable {
   ///
   /// https://api.flutter.dev/flutter/widgets/State/activate.html
   @protected
+  @mustCallSuper
   void activate() {}
 
   /// Called when this object is removed from the tree.
   ///
   /// https://api.flutter.dev/flutter/widgets/State/deactivate.html
   @protected
+  @mustCallSuper
   void deactivate() {}
 
   /// Called when this object is removed from the tree permanently.
   ///
   /// https://api.flutter.dev/flutter/widgets/State/dispose.html
   @protected
+  @mustCallSuper
   void dispose() {}
 
   /// Called whenever the application is reassembled during debugging,
@@ -134,6 +138,7 @@ abstract class WidgetModel<W extends CuteWidget> with Diagnosticable {
   ///
   /// https://api.flutter.dev/flutter/widgets/State/reassemble.html
   @protected
+  @mustCallSuper
   void reassemble() {}
 
   /// A handle to the location of a widget in the widget tree.
